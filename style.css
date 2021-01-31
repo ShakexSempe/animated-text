@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Michroma', sans-serif;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #000;
+}
+
+.wavy{
+    position: relative;
+    -webkit-box-reflect: below -12px linear-gradient(
+        transparent, rgba(0,0,0,0.2)
+    );
+
+
+}
+.wavy span{
+    position: relative;
+    display: inline-block;
+    color: yellowgreen;
+    font-size: 2.6rem;
+    text-transform: uppercase;
+    animation: animate 3s ease-in-out infinite;
+    animation-delay: calc(0.1s * var(--i))
+}
+.slide{
+    position: relative;
+    -webkit-box-reflect: below -12px linear-gradient(
+        transparent, rgba(0,0,0,0.2)
+    )
+}
+.slide span{
+    position: relative;
+    display: inline-block;
+    color: yellow;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    animation: slide-animate 4s ease-in-out infinite;
+    animation-delay: calc(0.2s * var(--j))
+}
+a{
+    color: #fff;
+    text-decoration: none;
+}
+footer{
+    color: #fff;
+    position: fixed;
+    bottom: 10px;
+}
+/*keyframes*/
+@keyframes animate{
+    0%{
+        transform: translateY(0px);
+    }
+    20%{
+        transform: translateY(-20px);
+    }
+    40%, 100%{
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide-animate{
+    0%{
+        opacity: 1;
+        text-transform: uppercase;
+    }
+    50%{
+        opacity: 0 ;
+        text-transform: lowercase;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+/*end of keyframes*/
+@media only screen and (max-width: 500px){
+    footer{
+        font-size: 14px;
+    }
+    .wavy span{
+        font-size: 2.1rem;
+    }
+}
